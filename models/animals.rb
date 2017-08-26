@@ -63,7 +63,7 @@ class Animal
     WHERE type = $1;"
     values = [type]
     found = SqlRunner.run( sql, values )
-    return Animal.new( found.first )
+    return found.map{ |animal_type| Animal.new( animal_type )}
   end
 
 end

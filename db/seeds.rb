@@ -34,6 +34,15 @@ animal3 = Animal.new({
   })
 animal3.save()
 
+animal4 = Animal.new({
+  "name" => "Willow",
+  "type" => "cat",
+  "age" => "7",
+  "adoptable" => true,
+  "date_entered" => "14/06/2017"
+  })
+animal4.save()
+
 owner1 = Owner.new({
   "first_name" => "Iain",
   "last_name" => "Paterson",
