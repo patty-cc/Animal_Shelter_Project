@@ -49,7 +49,7 @@ class Adoption
     WHERE id = $1;"
     values = [@animal_id]
     animals = SqlRunner.run( sql, values)
-    return Animal.new( animals.first )
+    return animals.map{ |animal| Animal.new( animal )}
   end
 
 end

@@ -9,11 +9,21 @@ Animal.delete_all()
 Owner.delete_all()
 Status.delete_all()
 
+vet_status1 = Status.new({
+  "status" => "At vets. Unavailable for adoption"
+  })
+vet_status1.save()
+
+vet_status2 = Status.new({
+  "status" => "Ready for adoption"
+  })
+vet_status2.save()
+
 animal1 = Animal.new({
   "name" => "Rover",
   "type" => "dog",
   "age" => "4",
-  "adoptable" => vet_status1.id,
+  "vet_id" => vet_status1.id,
   "date_entered" => "15/07/2017"
   })
 animal1.save()
@@ -22,7 +32,7 @@ animal2 = Animal.new({
   "name" => "Kiera",
   "type" => "dog",
   "age" => "2",
-  "adoptable" => vet_status1.id,
+  "vet_id" => vet_status2.id,
   "date_entered" => "15/05/2017"
   })
 animal2.save()
@@ -31,7 +41,7 @@ animal3 = Animal.new({
   "name" => "Coisty",
   "type" => "hamster",
   "age" => "1",
-  "adoptable" => vet_status1.id,
+  "vet_id" => vet_status1.id,
   "date_entered" => "20/05/2017"
   })
 animal3.save()
@@ -40,7 +50,7 @@ animal4 = Animal.new({
   "name" => "Willow",
   "type" => "cat",
   "age" => "7",
-  "adoptable" => vet_status1.id,
+  "vet_id" => vet_status2.id,
   "date_entered" => "14/06/2017"
   })
 animal4.save()
@@ -73,15 +83,6 @@ adoption2 = Adoption.new({
   })
 adoption2.save()
 
-vet_status1 = Status.new({
-  "status" => "At the vet"
-  })
-vet_status1.save()
-
-vet_status2 = Status.new({
-  "status" => "Ready for adoption"
-  })
-vet_status2.save()
 
 binding.pry
 nil

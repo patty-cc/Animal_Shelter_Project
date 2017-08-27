@@ -2,6 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class Status
 
+  attr_accessor :id, :status
+
   def initialize( array )
     @id = array['id'].to_i if array['id']
     @status = array['status']

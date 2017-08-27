@@ -9,7 +9,7 @@ class Animal
     @name = array['name']
     @type = array['type']
     @age = array['age'].to_i
-    @adoptable = array['adoptable']
+    @vet_id = array['vet_id']
     @date_entered = array['date_entered']
   end
 
@@ -18,13 +18,13 @@ class Animal
     name,
     type,
     age,
-    adoptable,
+    vet_id,
     date_entered
     ) VALUES (
     $1, $2, $3, $4, $5
     )
     RETURNING *;"
-    values = [@name, @type, @age, @adoptable, @date_entered]
+    values = [@name, @type, @age, @vet_id, @date_entered]
     saved = SqlRunner.run( sql, values )
     @id = saved.first()['id'].to_i
   end
@@ -35,13 +35,13 @@ class Animal
     name,
     type,
     age,
-    adoptable,
+    vet_id,
     date_entered
     ) = (
     $1, $2, $3, $4, $5
     )
     WHERE id = $6;"
-    values =[@name, @type, @age, @adoptable, @date_entered, @id]
+    values =[@name, @type, @age, @vet_id, @date_entered, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -64,6 +64,14 @@ class Animal
     values = [type]
     found = SqlRunner.run( sql, values )
     return found.map{ |animal_type| Animal.new( animal_type )}
+  end
+
+  def status()
+    sql = "SELECT * FROM vets
+    WHERE id = $1;"
+    values = [@vet_id]
+    vets = SqlRunner.run( sql, values)
+    return Status.new( vets.first )
   end
 
 end
