@@ -1,17 +1,19 @@
 require_relative('../models/animals.rb')
 require_relative('../models/owner.rb')
 require_relative('../models/adoptions.rb')
+require_relative('../models/status.rb')
 require('pry')
 
 Adoption.delete_all()
 Animal.delete_all()
 Owner.delete_all()
+Status.delete_all()
 
 animal1 = Animal.new({
   "name" => "Rover",
   "type" => "dog",
   "age" => "4",
-  "adoptable" => true,
+  "adoptable" => vet_status1.id,
   "date_entered" => "15/07/2017"
   })
 animal1.save()
@@ -20,7 +22,7 @@ animal2 = Animal.new({
   "name" => "Kiera",
   "type" => "dog",
   "age" => "2",
-  "adoptable" => false,
+  "adoptable" => vet_status1.id,
   "date_entered" => "15/05/2017"
   })
 animal2.save()
@@ -29,7 +31,7 @@ animal3 = Animal.new({
   "name" => "Coisty",
   "type" => "hamster",
   "age" => "1",
-  "adoptable" => true,
+  "adoptable" => vet_status1.id,
   "date_entered" => "20/05/2017"
   })
 animal3.save()
@@ -38,7 +40,7 @@ animal4 = Animal.new({
   "name" => "Willow",
   "type" => "cat",
   "age" => "7",
-  "adoptable" => true,
+  "adoptable" => vet_status1.id,
   "date_entered" => "14/06/2017"
   })
 animal4.save()
@@ -67,8 +69,19 @@ adoption1.save()
 
 adoption2 = Adoption.new({
   "animal_id" => animal2.id,
-  "owner_id" => animal1.id
+  "owner_id" => owner1.id
   })
+adoption2.save()
+
+vet_status1 = Status.new({
+  "status" => "At the vet"
+  })
+vet_status1.save()
+
+vet_status2 = Status.new({
+  "status" => "Ready for adoption"
+  })
+vet_status2.save()
 
 binding.pry
 nil

@@ -1,6 +1,9 @@
 DROP TABLE IF EXISTS adoptions;
+DROP TABLE IF EXISTS vets;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
+
+
 
 CREATE TABLE animals (
   id SERIAL PRIMARY KEY,
@@ -17,6 +20,12 @@ CREATE TABLE owners (
   last_name VARCHAR(255),
   address VARCHAR(255),
   city VARCHAR(255)
+);
+
+
+CREATE TABLE vets (
+  id SERIAL PRIMARY KEY,
+  status VARCHAR(255)
 );
 
 CREATE TABLE adoptions (
