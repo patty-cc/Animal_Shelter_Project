@@ -26,6 +26,10 @@ li {
   text-transform:uppercase;
 }
 
+a:visited {
+  text-decoration:none;
+}
+
 /* styling for the banner area */
 .banner-img {
   background-image: url(../images/banner.jpg);
@@ -36,14 +40,14 @@ li {
 
 /* styling aniaml box area */
 
-.grid {
+.grid-row {
   display:flex;
-  justify-content: space-around;
+  flex-direction:row;
 }
 
 .cell {
   flex:1;
-  display:inline-block;
+  margin-right: 10px;
   background-color: lightblue;
   padding: 50px;
 }

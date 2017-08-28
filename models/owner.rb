@@ -9,7 +9,7 @@ class Owner
     @first_name = array['first_name']
     @last_name = array['last_name']
     @address = array['address']
-    @city = array['array']
+    @city = array['city']
   end
 
   def save()

@@ -1,0 +1,12 @@
+<h1>Registered Potential Pwners</h1>
+
+<ul>
+  <li><a href="#">Register Yourself</a></li>
+</ul>
+
+<% for owner in @owners %>
+  <p><%= owner.first_name %></p>
+  <p><%= owner.last_name%></p>
+  <p><%= owner.address%></p>
+  <p><%= owner.city%></p>
+<% end %>
