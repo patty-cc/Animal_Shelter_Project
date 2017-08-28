@@ -33,3 +33,17 @@ li {
   width: 100%;
   height:650px;
 }
+
+/* styling aniaml box area */
+
+.grid {
+  display:flex;
+  justify-content: space-around;
+}
+
+.cell {
+  flex:1;
+  display:inline-block;
+  background-color: lightblue;
+  padding: 50px;
+}

@@ -3,3 +3,6 @@
 <p><%= @animal.age %></p>
 <p><%= @animal.status().status %></p>
 <p><%= @animal.date_entered %></p>
+<form action="/rehome/<%= @animal.id %>/delete" method="POST">
+  <input type="submit" value="Delete">
+</form>

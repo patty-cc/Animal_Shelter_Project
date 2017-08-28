@@ -24,7 +24,7 @@ animal1 = Animal.new({
   "type" => "dog",
   "age" => "4",
   "vet_id" => vet_status1.id,
-  "date_entered" => "15/07/2017"
+  "date_entered" => "2017-05-12"
   })
 animal1.save()
 
@@ -33,7 +33,7 @@ animal2 = Animal.new({
   "type" => "dog",
   "age" => "2",
   "vet_id" => vet_status2.id,
-  "date_entered" => "15/05/2017"
+  "date_entered" => "2017-07-25"
   })
 animal2.save()
 
@@ -42,7 +42,7 @@ animal3 = Animal.new({
   "type" => "hamster",
   "age" => "1",
   "vet_id" => vet_status1.id,
-  "date_entered" => "20/05/2017"
+  "date_entered" => "2017-02-20"
   })
 animal3.save()
 
@@ -51,7 +51,7 @@ animal4 = Animal.new({
   "type" => "cat",
   "age" => "7",
   "vet_id" => vet_status2.id,
-  "date_entered" => "14/06/2017"
+  "date_entered" => "2017-04-9"
   })
 animal4.save()
 

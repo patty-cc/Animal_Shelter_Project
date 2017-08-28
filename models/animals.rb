@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner.rb')
+require("pry-byebug")
+require("pry")
 
 class Animal
 
@@ -55,6 +57,13 @@ class Animal
   def self.delete_all()
     sql = "DELETE FROM animals"
     values = []
+    SqlRunner.run( sql, values )
+  end
+
+  def delete()
+    sql = "DELETE FROM animals
+    WHERE id = $1"
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 

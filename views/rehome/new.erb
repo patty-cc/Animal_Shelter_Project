@@ -1,0 +1,24 @@
+<form action="/rehome" method="POST">
+
+  <label for="name-field">Name:</label>
+  <input type="text" name="name" id="name-field"/>
+
+  <label for="type-field">Type:</label>
+  <input type="text" name="type" id="type-field"/>
+
+  <label for="age-field">Age:</label>
+  <input type="number" name="age" id="age-field" />
+
+  <label for="status-select">Select Adoption Status:</label>
+    <select id="status-select" name="vet_id">
+      <% @status.each do |state| %>
+      <option value=<%= state.id %>> <%= state.status %></option>
+      <% end %>
+    </select >
+
+  <label for="date-field">Date:</label>
+  <input type="date" name="date" id="date-field" />
+
+  <input type="submit" value="Add Pet"/>
+
+</form>

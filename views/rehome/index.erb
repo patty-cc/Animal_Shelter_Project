@@ -1,6 +1,22 @@
 <h1>Meet your new family member</h1>
 
-<% for animal in @animals%>
-  <h3><%= animal.name %></h3>
-  <p><%= animal.type %></p>
-<% end %>
+<ul>
+  <li><a href="/rehome/new">Add a new pet</a></li>
+</ul>
+
+<div class="animals grid">
+  <div class="grid-row">
+
+
+
+      <% for animal in @animals%>
+      <div class="cell">
+        <h3><%= animal.name %></h3>
+        <p><%= animal.type %></p>
+        <p><a href="/rehome/<%= animal.id %>">More Info</a></p>
+        </div>
+      <% end %>
+
+
+  </div>
+</div>
