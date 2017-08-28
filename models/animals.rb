@@ -9,7 +9,7 @@ class Animal
     @name = array['name']
     @type = array['type']
     @age = array['age'].to_i
-    @vet_id = array['vet_id']
+    @vet_id = array['vet_id'].to_i
     @date_entered = array['date_entered']
   end
 
@@ -58,12 +58,12 @@ class Animal
     SqlRunner.run( sql, values )
   end
 
-  def self.find( type )
+  def self.find( id )
     sql = "SELECT * FROM animals
-    WHERE type = $1;"
-    values = [type]
+    WHERE id = $1;"
+    values = [id]
     found = SqlRunner.run( sql, values )
-    return found.map{ |animal_type| Animal.new( animal_type )}
+    return found.map{ |animal_type| Animal.new( animal_type )}[0]
   end
 
   def status()
