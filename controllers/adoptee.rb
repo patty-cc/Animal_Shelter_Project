@@ -10,3 +10,15 @@ get '/owner' do
   @owners = Owner.all()
   erb( :"adoptee/index" )
 end
+
+#create a new owner
+get '/owner/new' do
+  @owners = Owner.all()
+  erb( :"adoptee/new")
+end
+
+post '/owner' do
+  @owner = Owner.new( params )
+  @owner.save()
+  redirect to ('/owner')
+end

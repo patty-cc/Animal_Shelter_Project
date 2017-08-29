@@ -4,7 +4,7 @@ require("pry")
 
 class Animal
 
-  attr_accessor :id, :name, :type, :age, :adoptable, :date_entered
+  attr_accessor :id, :name, :type, :age, :adoptable, :date_entered, :photo
 
   def initialize(array)
     @id = array['id'].to_i if array['id']
@@ -13,6 +13,7 @@ class Animal
     @age = array['age'].to_i
     @vet_id = array['vet_id'].to_i
     @date_entered = array['date_entered']
+    @photo = array['photo']
   end
 
   def save()
@@ -21,12 +22,13 @@ class Animal
     type,
     age,
     vet_id,
-    date_entered
+    date_entered,
+    photo
     ) VALUES (
-    $1, $2, $3, $4, $5
+    $1, $2, $3, $4, $5, $6
     )
     RETURNING *;"
-    values = [@name, @type, @age, @vet_id, @date_entered]
+    values = [@name, @type, @age, @vet_id, @date_entered, @photo]
     saved = SqlRunner.run( sql, values )
     @id = saved.first()['id'].to_i
   end
@@ -38,11 +40,12 @@ class Animal
     type,
     age,
     vet_id,
-    date_entered
+    date_entered,
+    photo
     ) = (
-    $1, $2, $3, $4, $5
+    $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $6;"
+    WHERE id = $7;"
     values =[@name, @type, @age, @vet_id, @date_entered, @id]
     SqlRunner.run( sql, values )
   end
@@ -50,6 +53,14 @@ class Animal
   def self.all()
     sql = "SELECT * FROM animals"
     values = []
+    animals = SqlRunner.run( sql, values )
+    return animals.map{ |animal| Animal.new(animal) }
+  end
+
+  def self.filter_by_vet_id(vet_id)
+    sql ="SELECT * FROM animals
+    WHERE vet_id = $1;"
+    values = [vet_id]
     animals = SqlRunner.run( sql, values )
     return animals.map{ |animal| Animal.new(animal) }
   end

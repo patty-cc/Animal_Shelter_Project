@@ -1,0 +1,25 @@
+
+<form action='/adoptions' method='post'>
+  <label>
+    Please select an animal to be adopted:
+    <select name="animal_id">
+      <% for animal in @animals %>
+      <option value="<%= animal.id %>"><%= animal.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Please select an owner to be the adoptee:
+    <select name="owner_id">
+      <% for owner in @owners %>
+      <option value="<%= owner.id %>"><%= owner.first_name + " " + owner.last_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="date-field">Date:</label>
+  <input type="date" name="date_adopt" id="date-field" />
+
+  <input type="submit" value="Create Adoption"/>
+</form>

@@ -7,7 +7,13 @@ require_relative('../models/status.rb')
 
 #index page for the animals
 get '/rehome' do
-  @animals = Animal.all()
+  if params['vet_id'].nil?
+    @animals = Animal.all()
+  else
+    @animals = Animal.filter_by_vet_id(params['vet_id'].to_i)
+  end
+
+  @status = Status.all()
   erb( :"rehome/index" )
 end
 

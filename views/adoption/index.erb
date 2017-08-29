@@ -1,0 +1,9 @@
+<h1>Adoptions</h1>
+
+<% for adoption in @adoptions%>
+  <p><%= adoption.animal.name%> the
+    <%= adoption.animal.type%>
+    has been adopted by
+    <%= adoption.owner.first_name + " " +adoption.owner.last_name %>
+    on the <%= adoption.date_adopt %></p>
+<% end %>

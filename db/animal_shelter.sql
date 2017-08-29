@@ -14,7 +14,8 @@ CREATE TABLE animals (
   type VARCHAR(255),
   age INT,
   vet_id INT REFERENCES vets(id),
-  date_entered DATE
+  date_entered DATE,
+  photo VARCHAR(255)
 );
 
 CREATE TABLE owners (
@@ -28,5 +29,6 @@ CREATE TABLE owners (
 CREATE TABLE adoptions (
   id SERIAL PRIMARY KEY,
   animal_id INT REFERENCES animals(id),
-  owner_id INT REFERENCES owners(id)
+  owner_id INT REFERENCES owners(id),
+  date_adopt DATE
 );
