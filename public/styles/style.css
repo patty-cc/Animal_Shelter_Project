@@ -33,20 +33,20 @@ body h1 {
 }
 
 /* styling for the navigation bar */
-nav {
+.navigation {
   height: 80px;
   background-color: white;
   text-align: center;
 }
 
-ul {
+.navigation ul {
   list-style-type: none;
   display:flex;
   margin:0px;
   padding:30px 0px 0px 0px;
 }
 
-li {
+.navigation li {
   flex:1;
   display:inline;
   font-size: 20px;
@@ -54,8 +54,9 @@ li {
   text-transform:uppercase;
 }
 
-a:visited {
+a, a:visited {
   text-decoration:none;
+  color:blue;
 }
 
 /* styling for the banner area */
@@ -65,6 +66,26 @@ a:visited {
   width: 100%;
   height:650px;
   position: relative;
+}
+
+/* homepage */
+
+.outer-wrap{
+  background-color: lightblue;
+  width:90%;
+  margin:auto;
+  padding:20px;
+  border-radius:10px;
+}
+
+.home-page{
+  display: flex;
+  margin: auto;
+}
+
+.home-para {
+  padding:0px 30px;
+  font-size:18px;
 }
 
 /* styling for drop down on animals page */
@@ -96,6 +117,12 @@ a:visited {
   right: 0;
   margin-bottom:10px;
 }
+
+.social-media ul{
+  display:flex;
+  list-style-type: none;
+}
+
 .social-media li{
   margin:0px 10px 0px 0px;
   flex:0;
@@ -133,12 +160,6 @@ a:visited {
   padding:0px;
   margin:0px;
   color: royalblue;
-}
-
-footer{
-  height: 100px;
-  background-color: grey;
-  margin-top:100px;
 }
 
 /* styling for animal main info */
@@ -219,4 +240,51 @@ input[type=submit]:hover {
   border-radius:5px;
   background-color: lightgrey;
   border: none;
+}
+
+/* styling footer*/
+footer {
+  background-color: grey;
+  margin-top:50px;
+
+}
+
+.foot-info{
+  width:90%;
+  margin:auto;
+  padding:40px;
+  display:flex;
+}
+
+.contact {
+  flex:1;
+  color:lightgrey;
+}
+
+.contact iframe{
+  margin-bottom:15px;
+}
+
+.soc-med-link{
+  flex:1;
+  font-size:25px;
+}
+
+.soc-med-link i{
+  background-color:#d9d9d9;
+  padding:5px;
+  border-radius:50%;
+  margin-right:10px;
+}
+
+.soc-med-link ul{
+  list-style-type: none;
+}
+
+.soc-med-link li{
+  margin-bottom:10px;
+}
+
+.soc-med-link a{
+  color:lightgrey;
 }

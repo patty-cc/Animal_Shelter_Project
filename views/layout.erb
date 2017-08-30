@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Animal Shelter Scotland</title>
   </head>
   <body>
 
-    <nav>
+    <nav class="navigation">
       <ul>
         <li><a href='/'>Home</a></li>
         <li>About</li>
@@ -30,6 +31,26 @@
       </div>
     </div>
     <%= yield %>
-    <footer></footer>
+    <footer>
+      <div class="foot-info">
+        <div class="contact">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17894.48207659042!2d-3.32383455!3d55.90064985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1504123410102" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <address>
+            Please visit us:<br>
+            30 Some Place<br>
+            Somewhere<br>
+            Scotland<br>
+            EH11 234
+          </address>
+        </div>
+        <div class="soc-med-link">
+          <ul>
+            <li><i class="fa fa-facebook-official"></i><a target="_blank" href="https://en-gb.facebook.com/">www.facebook.com</a></li>
+            <li><i class="fa fa-twitter-square"></i><a target="_blank" href="https://twitter.com">www.twitter.com</a></li>
+            <li><i class="fa fa-youtube-play"></i><a target="_blank" href="https://www.youtube.com/">www.youtube.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

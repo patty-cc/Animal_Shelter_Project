@@ -59,6 +59,26 @@ animal4 = Animal.new({
   })
 animal4.save()
 
+animal5 = Animal.new({
+  "name" => "Rex",
+  "type" => "dog",
+  "age" => "3",
+  "vet_id" => vet_status1.id,
+  "date_entered" => "2017-05-9",
+  "photo" => "dog2.jpg"
+  })
+animal5.save()
+
+animal6 = Animal.new({
+  "name" => "Garfield",
+  "type" => "cat",
+  "age" => "1",
+  "vet_id" => vet_status1.id,
+  "date_entered" => "2017-06-12",
+  "photo" => "cat2.jpg"
+  })
+animal6.save()
+
 owner1 = Owner.new({
   "first_name" => "Iain",
   "last_name" => "Paterson",
@@ -72,6 +92,38 @@ owner2 = Owner.new({
   "last_name" => "Strachan",
   "address" => "32 Foxknowe Place",
   "city" => "Livingston"
+  })
+owner2.save()
+
+owner3 = Owner.new({
+  "first_name" => "Tommy",
+  "last_name" => "Richmond",
+  "address" => "7 Somewhere Street",
+  "city" => "Somewhere"
+  })
+owner3.save()
+
+owner4 = Owner.new({
+  "first_name" => "Heather",
+  "last_name" => "Rae",
+  "address" => "12 Somewhere Upnorth",
+  "city" => "Aberdeen"
+  })
+owner4.save()
+
+owner2 = Owner.new({
+  "first_name" => "Craig",
+  "last_name" => "Morton",
+  "address" => "16 Codeclan Place",
+  "city" => "Edinburgh"
+  })
+owner2.save()
+
+owner2 = Owner.new({
+  "first_name" => "Harrison",
+  "last_name" => "Booth",
+  "address" => "11 Codeclan Way",
+  "city" => "Aberdeen"
   })
 owner2.save()
 
