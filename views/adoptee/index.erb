@@ -1,12 +1,16 @@
 <h1>Registered Potential Owners</h1>
 
-<ul>
-  <li><a href="/owner/new">Register Owner</a></li>
-</ul>
+<div class="button-wrap">
+  <a href="/owner/new" class="button">Register Owner</a>
+</div>
 
-<% for owner in @owners %>
-  <p><%= owner.first_name %></p>
-  <p><%= owner.last_name%></p>
-  <p><%= owner.address%></p>
-  <p><%= owner.city%></p>
-<% end %>
+<div class="grid-row">
+  <% for owner in @owners %>
+  <div class="cell">
+      <p><%= owner.first_name %></p>
+      <p><%= owner.last_name%></p>
+      <p><%= owner.address%></p>
+      <p><%= owner.city%></p>
+    </div>
+  <% end %>
+</div>

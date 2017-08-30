@@ -1,9 +1,21 @@
-<img src="../images/<%= @animal.photo %>">
-<h2>Name: <%= @animal.name %></h2>
-<p>Type: <%= @animal.type %></p>
-<p>Age: <%= @animal.age %></p>
-<p>Adoptable: <%= @animal.status().status %></p>
-<p>Date: <%= @animal.date_entered %></p>
-<form action="/rehome/<%= @animal.id %>/delete" method="POST">
-  <input type="submit" value="Delete">
-</form>
+<h1>More Info</h1>
+
+<div class="pet-info">
+
+  <img src="../images/<%= @animal.photo %>">
+
+   <div class="pet-info-cell">
+
+      <h2>Name: <%= @animal.name %></h2>
+      <p>Type: <%= @animal.type %></p>
+      <p>Age: <%= @animal.age %></p>
+      <p>Adoptable: <%= @animal.status().status %></p>
+      <p>Date: <%= @animal.date_entered %></p>
+
+      <form action="/rehome/<%= @animal.id %>/delete" method="POST">
+        <input type="submit" value="Delete">
+      </form>
+
+    </div>
+    
+</div>

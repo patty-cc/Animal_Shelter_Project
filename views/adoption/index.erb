@@ -1,9 +1,19 @@
 <h1>Adoptions</h1>
 
-<% for adoption in @adoptions%>
-  <p><%= adoption.animal.name%> the
-    <%= adoption.animal.type%>
-    has been adopted by
-    <%= adoption.owner.first_name + " " +adoption.owner.last_name %>
-    on the <%= adoption.date_adopt %></p>
-<% end %>
+
+<div class="button-wrap">
+  <a href="/adoptions/new" class="button">Create Adoption</a>
+</div>
+
+<div class="grid-row">
+  <% for adoption in @adoptions%>
+    <div class="cell">
+      <img src="../images/<%= adoption.animal.photo %>">
+      <h1><%= adoption.animal.name %></h1>
+      <p>Adopted by: <%= adoption.owner.first_name +
+      " " + adoption.owner.last_name %></p>
+      <p>On: <%= adoption.date_adopt %></p></p>
+
+    </div>
+  <% end %>
+</div>
