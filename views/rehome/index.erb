@@ -5,14 +5,16 @@
   <a href="/rehome/new" class="button">Add new pet</a>
 </div>
 
-<form action="/rehome" method="GET">
-  <select id="status-select" name="vet_id">
-    <% @status.each do |state| %>
-    <option value=<%= state.id %>> <%= state.status %></option>
-    <% end %>
-  </select>
-  <input type="submit" value="Filter">
-</form>
+<div class="form-wrap">
+  <form action="/rehome" method="GET">
+    <select id="status-select" name="vet_id">
+      <% @status.each do |state| %>
+      <option value=<%= state.id %>> <%= state.status %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Filter">
+  </form>
+</div>
 
 <div class="grid-row">
 

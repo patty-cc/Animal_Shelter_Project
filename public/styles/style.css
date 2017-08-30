@@ -32,7 +32,6 @@ body h1 {
 
 }
 
-
 /* styling for the navigation bar */
 nav {
   height: 80px;
@@ -66,6 +65,28 @@ a:visited {
   width: 100%;
   height:650px;
   position: relative;
+}
+
+/* styling for drop down on animals page */
+.form-wrap{
+  width:40%;
+  margin:auto;
+}
+
+.form-wrap select {
+    padding:5px 10px;
+    width: 200px;;
+    margin:10px 0px;
+    border-radius:5px;
+}
+
+.form-wrap Input[type=submit]{
+    padding:5px 10px;
+    margin:10px 0px;
+    border-radius:5px;
+    background-color: white;
+    border: none;
+    width:50px;
 }
 
 /* styling social media links within banner*/
@@ -151,22 +172,51 @@ footer{
 .form-styles {
   background-color:lightblue;
   border-radius:5px;
-  width:80%;
+  width:60%;
   margin:auto;
   display:flex;
   flex-direction: column;
+  padding:20px;
 }
 
-input[type=text] {
+input[type=text], select {
   padding:5px 10px;
-  width: 90%;
+  width: 50%;
   margin:10px 0px;
   border-radius:5px;
 }
 
 input[type=number] {
   padding:5px 10px;
-  width: 90%;
+  width: 50%;
   margin:10px 0px;
   border-radius:5px;
+}
+
+input[type=date] {
+  padding:5px 10px;
+  margin:10px 0px;
+  border-radius:5px;
+}
+
+input[type=file] {
+  margin:10px 0px;
+  border-radius:5px;
+}
+
+input[type=submit] {
+  padding:5px 10px;
+  margin:10px 0px;
+  border-radius:5px;
+  background-color: white;
+  border: none;
+  width:15%;
+}
+
+input[type=submit]:hover {
+  padding:5px 10px;
+  margin:10px 0px;
+  border-radius:5px;
+  background-color: lightgrey;
+  border: none;
 }
